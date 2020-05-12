@@ -43,5 +43,24 @@
       "habilitacao": "E",
       "id": 2
     }
+  ],
+  "transporte": [],
+  "cargas": [
+    {
+      "origem": "São José do Norte/RS",
+      "destino": "Belém/PA",
+      "descricao": "Cebola",
+      "peso": 33.5,
+      "frete": 11300,
+      "id": 1
+    },
+    {
+      "origem": "11",
+      "destino": "11",
+      "descricao": "12",
+      "peso": 2121,
+      "frete": 21,
+      "id": 2
+    }
   ]
 }

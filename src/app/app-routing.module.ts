@@ -18,6 +18,14 @@ const routes: Routes = [
   {
     path: 'motoristas',
     loadChildren: () => import('./motoristas/motoristas.module').then( m => m.MotoristasPageModule)
+  },
+  {
+    path: 'cargas',
+    loadChildren: () => import('./cargas/cargas.module').then( m => m.CargasPageModule)
+  },
+  {
+    path: 'transporte',
+    loadChildren: () => import('./transporte/transporte.module').then( m => m.TransportePageModule)
   }
 ];
 

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Cargas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Origem*:</ion-label>
+    <ion-input type="text" [(ngModel)]="carga.origem"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Destino*:</ion-label>
+    <ion-input type="text" [(ngModel)]="carga.destino"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Descrição*:</ion-label>
+    <ion-input type="text" [(ngModel)]="carga.descricao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Peso*:</ion-label>
+    <ion-input type="number" [(ngModel)]="carga.peso"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Frete*:</ion-label>
+    <ion-input type="number" [(ngModel)]="carga.frete"></ion-input>
+  </ion-item>
+  <ion-fab vertical="bottom" horizontal="end" >
+    <ion-fab-button (click)="salvar()" [disabled]="isDisabled()">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
