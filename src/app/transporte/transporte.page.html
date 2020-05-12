@@ -12,7 +12,9 @@
     <ion-item *ngFor="let item of transportes">
       <ion-label>
         <h3>Caminhão: <ion-text class="ion-text-wrap" color="medium">{{item.caminhao.placa}} | {{item.caminhao.motorista.nome}}</ion-text></h3>
-        <h3>Carga: <ion-text class="ion-text-wrap" color="medium">{{item.carga.descricao}} | {{item.carga.origem}} -> {{item.carga.destino}}</ion-text></h3>
+        <h3>Carga: <ion-text class="ion-text-wrap" color="medium">{{item.carga.descricao}}</ion-text></h3>
+        <h3>Origem: <ion-text class="ion-text-wrap" color="medium">{{item.carga.origem}}</ion-text></h3>
+        <h3>Destino: <ion-text class="ion-text-wrap" color="medium">{{item.carga.destino}}</ion-text></h3>
         <h3>Frete: <ion-text color="medium">{{item.carga.frete | currency:'BRL'}}</ion-text></h3>
         <h3>Status: <ion-text color="medium">{{item.status.description || '---'}}</ion-text></h3>
       </ion-label>

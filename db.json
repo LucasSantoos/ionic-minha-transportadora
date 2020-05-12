@@ -53,8 +53,8 @@
         "description": "Concluído"
       },
       "carga": {
-        "origem": "São José do Norte/RS",
-        "destino": "Belém/PA",
+        "origem": "Torres/RS",
+        "destino": "Criciúma/SC",
         "descricao": "Cebola",
         "peso": 33.5,
         "frete": 11300,
@@ -75,8 +75,8 @@
   ],
   "cargas": [
     {
-      "origem": "São José do Norte/RS",
-      "destino": "Belém/PA",
+      "origem": "Torres/RS",
+      "destino": "Criciúma/SC",
       "descricao": "Cebola",
       "peso": 33.5,
       "frete": 11300,
