@@ -4,6 +4,6 @@
 
 ```
 npm install
-ionic run
+ionic serve
 json-server --watch db.json
 ```
