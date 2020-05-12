@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Motoristas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome*:</ion-label>
+    <ion-input type="text" [(ngModel)]="motorista.nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Habilitação*:</ion-label>
+    <ion-input type="text" maxlength="2" [(ngModel)]="motorista.habilitacao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nascimento</ion-label>
+    <ion-datetime displayFormat="D MMMM YYYY" pickerFormat="D MMMM YYYY" [(ngModel)]="motorista.dtNascimento"></ion-datetime>
+  </ion-item>
+  <ion-fab vertical="bottom" horizontal="end" >
+    <ion-fab-button (click)="salvar()" [disabled]="!motorista.nome || !motorista.habilitacao">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

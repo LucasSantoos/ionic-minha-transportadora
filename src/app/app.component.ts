@@ -13,6 +13,11 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
+      title: 'Motoristas',
+      url: '/motoristas',
+      icon: 'person'
+    },
+    {
       title: 'Caminhões',
       url: '/caminhoes',
       icon: 'car'
@@ -26,11 +31,6 @@ export class AppComponent implements OnInit {
       title: 'Em transporte',
       url: '/folder/transporte',
       icon: 'bicycle'
-    },
-    {
-      title: 'Motoristas',
-      url: '/folder/motoristas',
-      icon: 'person'
     },
     {
       title: 'Financeiro',

@@ -2,11 +2,46 @@
   "caminhoes": [
     {
       "id": 1,
-      "placa": "123312"
+      "placa": "wqwq",
+      "motorista": {
+        "nome": "Sandro",
+        "habilitacao": "E",
+        "id": 2
+      }
     },
     {
       "id": 2,
-      "placa": "xxx3133555"
+      "placa": "motorista lucas",
+      "motorista": {
+        "id": 1,
+        "nome": "Lucas",
+        "habilitacao": "AE",
+        "dtNascimento": "1999-06-18"
+      },
+      "capacidade": 37.05
+    },
+    {
+      "placa": "12",
+      "capacidade": 21,
+      "motorista": {
+        "id": 0,
+        "nome": "",
+        "habilitacao": ""
+      },
+      "id": 3
+    }
+  ],
+  "motoristas": [
+    {
+      "id": 1,
+      "nome": "Lucas",
+      "habilitacao": "AE",
+      "dtNascimento": "1999-06-18"
+    },
+    {
+      "nome": "Sandro",
+      "habilitacao": "E",
+      "id": 2
     }
   ]
 }

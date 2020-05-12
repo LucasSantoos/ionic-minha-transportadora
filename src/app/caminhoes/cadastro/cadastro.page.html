@@ -12,6 +12,18 @@
     <ion-label position="floating">Placa*:</ion-label>
     <ion-input type="text" [(ngModel)]="caminhao.placa"></ion-input>
   </ion-item>
+  <ion-item>
+    <ion-label>Motorista:</ion-label>
+    <ion-select [(ngModel)]="caminhao.motorista" placeholder="Selecione um motorista" [compareWith]="compare">
+      <ion-select-option *ngFor="let motorista of motoristas" [value]="motorista">
+        {{motorista.nome}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Capacidade de carga: </ion-label>
+    <ion-input type="number" [(ngModel)]="caminhao.capacidade"></ion-input>
+  </ion-item>
   <ion-fab vertical="bottom" horizontal="end" >
     <ion-fab-button (click)="salvar()" [disabled]="!caminhao.placa">
       <ion-icon name="checkmark-outline"></ion-icon>
