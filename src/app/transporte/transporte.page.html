@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Transportes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let item of transportes">
+      <ion-label>
+        <h3>Caminhão: <ion-text class="ion-text-wrap" color="medium">{{item.caminhao.placa}} | {{item.caminhao.motorista.nome}}</ion-text></h3>
+        <h3>Carga: <ion-text class="ion-text-wrap" color="medium">{{item.carga.descricao}} | {{item.carga.origem}} -> {{item.carga.destino}}</ion-text></h3>
+        <h3>Frete: <ion-text color="medium">{{item.carga.frete | currency:'BRL'}}</ion-text></h3>
+        <h3>Status: <ion-text color="medium">{{item.status.description || '---'}}</ion-text></h3>
+      </ion-label>
+      <ion-icon color="dark" name="create" slot="end" [routerLink]="['/transporte/cadastro', item.id]"></ion-icon>
+      <ion-icon color="danger" name="trash" slot="end" (click)="confirmarExclusao(item)"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/transporte/cadastro']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

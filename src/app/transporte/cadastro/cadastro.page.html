@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Transporte</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Caminhão:</ion-label>
+    <ion-select [(ngModel)]="transporte.caminhao" placeholder="Selecione um caminhão" [compareWith]="compareCaminhao">
+      <ion-select-option *ngFor="let caminhao of caminhoes" [value]="caminhao">
+        {{caminhao.placa}} | {{caminhao?.motorista?.nome}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Carga:</ion-label>
+    <ion-select [(ngModel)]="transporte.carga" placeholder="Selecione uma carga" [compareWith]="compareCarga">
+      <ion-select-option *ngFor="let carga of cargas" [value]="carga" >
+        {{carga.origem}} -> {{carga.destino}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Status:</ion-label>
+    <ion-select [(ngModel)]="transporte.status" placeholder="Selecione um status" [compareWith]="compareStatus">
+      <ion-select-option *ngFor="let item of status" [value]="item" >
+        {{item.description}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-fab vertical="bottom" horizontal="end" >
+    <ion-fab-button (click)="salvar()" [disabled]="!transporte.status">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

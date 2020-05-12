@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Em transporte',
-      url: '/folder/transporte',
+      url: '/transporte',
       icon: 'bicycle'
     },
     {

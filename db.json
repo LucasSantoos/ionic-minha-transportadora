@@ -2,16 +2,17 @@
   "caminhoes": [
     {
       "id": 1,
-      "placa": "wqwq",
+      "placa": "JDN-5500",
       "motorista": {
         "nome": "Sandro",
         "habilitacao": "E",
         "id": 2
-      }
+      },
+      "capacidade": 33
     },
     {
       "id": 2,
-      "placa": "motorista lucas",
+      "placa": "IZA-9282",
       "motorista": {
         "id": 1,
         "nome": "Lucas",
@@ -21,12 +22,13 @@
       "capacidade": 37.05
     },
     {
-      "placa": "12",
+      "placa": "IZA1A32",
       "capacidade": 21,
       "motorista": {
-        "id": 0,
-        "nome": "",
-        "habilitacao": ""
+        "id": 1,
+        "nome": "Lucas",
+        "habilitacao": "AE",
+        "dtNascimento": "1999-06-18"
       },
       "id": 3
     }
@@ -44,7 +46,33 @@
       "id": 2
     }
   ],
-  "transporte": [],
+  "transportes": [
+    {
+      "status": {
+        "id": 4,
+        "description": "Concluído"
+      },
+      "carga": {
+        "origem": "São José do Norte/RS",
+        "destino": "Belém/PA",
+        "descricao": "Cebola",
+        "peso": 33.5,
+        "frete": 11300,
+        "id": 1
+      },
+      "caminhao": {
+        "id": 1,
+        "placa": "JDN-5500",
+        "motorista": {
+          "nome": "Sandro",
+          "habilitacao": "E",
+          "id": 2
+        },
+        "capacidade": 33
+      },
+      "id": 1
+    }
+  ],
   "cargas": [
     {
       "origem": "São José do Norte/RS",
