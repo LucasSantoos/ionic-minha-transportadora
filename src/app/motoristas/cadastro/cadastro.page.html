@@ -22,8 +22,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Habilitação*:</ion-label>
-      <ion-select #habilitacao="ngModel" [(ngModel)]="motorista.habilitacao" name="habilitacao" required interface="popover">
-        <ion-select-option value="">Selecione uma categoria</ion-select-option>
+      <ion-select #habilitacao="ngModel" placeholder="Selecione uma categoria" [(ngModel)]="motorista.habilitacao" name="habilitacao" required>
         <ion-select-option value="A">A</ion-select-option>
         <ion-select-option value="B">B</ion-select-option>
         <ion-select-option value="C">C</ion-select-option>

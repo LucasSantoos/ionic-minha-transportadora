@@ -8,25 +8,47 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Placa*:</ion-label>
-    <ion-input type="text" [(ngModel)]="caminhao.placa"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Motorista:</ion-label>
-    <ion-select [(ngModel)]="caminhao.motorista" placeholder="Selecione um motorista" [compareWith]="compare">
-      <ion-select-option *ngFor="let motorista of motoristas" [value]="motorista">
-        {{motorista.nome}}
-      </ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Capacidade de carga: </ion-label>
-    <ion-input type="number" [(ngModel)]="caminhao.capacidade"></ion-input>
-  </ion-item>
-  <ion-fab vertical="bottom" horizontal="end" >
-    <ion-fab-button (click)="salvar()" [disabled]="!caminhao.placa">
-      <ion-icon name="checkmark-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <form #caminhaoForm="ngForm" novalidate>
+    <ion-item>
+      <ion-label position="floating">Placa*:</ion-label>
+      <ion-input #placa="ngModel" name="placa" type="text" [(ngModel)]="caminhao.placa" required minlength="7" maxlength="8" pattern="[A-Z0-9]+" (ngModelChange)="caminhao.placa = $event.toUpperCase()"></ion-input>
+      <ion-text color="danger" *ngIf="placa.invalid && (placa.dirty || placa.touched)">
+        <small>
+          <span *ngIf="placa.errors.required">
+            A placa obrigatória
+          </span>
+          <span *ngIf="placa.errors.minlength">
+            A placa deve ter no mínimo 7 caracteres
+          </span>
+          <span *ngIf="placa.errors.pattern">
+            A placa deve conter apenas letras e números
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Motorista:</ion-label>
+      <ion-select #motorista="ngModel" name="motorista" [(ngModel)]="caminhao.motorista" placeholder="Selecione um motorista" [compareWith]="compare">
+        <ion-select-option *ngFor="let motorista of motoristas" [value]="motorista">
+          {{motorista.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Capacidade de carga: </ion-label>
+      <ion-input #capacidade="ngModel" name="capacidade" type="number" [(ngModel)]="caminhao.capacidade" required></ion-input>
+      <ion-text color="danger" *ngIf="capacidade.invalid && (capacidade.dirty || capacidade.touched)">
+        <small>
+          <span *ngIf="capacidade.errors.required">
+            A capacidade de carga é obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="salvar()" [disabled]="caminhaoForm.invalid">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
 </ion-content>

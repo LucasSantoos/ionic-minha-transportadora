@@ -13,7 +13,7 @@
       <ion-label>
         <h3>Placa: <ion-text color="medium">{{item.placa}}</ion-text></h3>
         <h3>Motorista: <ion-text color="medium">{{item.motorista.nome}}</ion-text></h3>
-        <h3>Capacidade: <ion-text color="medium">{{item.capacidade || '---'}}</ion-text> <ion-text color="medium" *ngIf="item.capacidade"> Toneladas</ion-text></h3>
+        <h3>Capacidade de carga: <ion-text color="medium">{{item.capacidade || '---'}}</ion-text> <ion-text color="medium" *ngIf="item.capacidade"> Toneladas</ion-text></h3>
       </ion-label>
       <ion-icon color="dark" name="create" slot="end" [routerLink]="['/caminhoes/cadastro', item.id]"></ion-icon>
       <ion-icon color="danger" name="trash" slot="end" (click)="confirmarExclusao(item)"></ion-icon>

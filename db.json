@@ -2,7 +2,7 @@
   "caminhoes": [
     {
       "id": 1,
-      "placa": "JDN-5500",
+      "placa": "JDN5500",
       "motorista": {
         "nome": "Sandro",
         "habilitacao": "E",
@@ -12,14 +12,14 @@
     },
     {
       "id": 2,
-      "placa": "IZA-9282",
+      "placa": "IZA78789",
       "motorista": {
         "id": 1,
         "nome": "Lucas",
         "habilitacao": "AE",
         "dtNascimento": "1999-06-18"
       },
-      "capacidade": 37.05
+      "capacidade": 1
     },
     {
       "placa": "IZA1A32",
