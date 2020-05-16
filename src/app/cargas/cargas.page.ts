@@ -55,5 +55,4 @@ export class CargasPage implements OnInit {
   excluir(carga: Carga) {
     this.cargaService.delete(carga).subscribe(() => this.listar());
   }
-
 }

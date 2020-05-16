@@ -46,8 +46,4 @@ export class CadastroPage implements OnInit {
         this.navController.navigateForward(['/cargas']);
       });
   }
-
-  isDisabled() {
-    return !this.carga.origem || !this.carga.destino || !this.carga.descricao || !this.carga.peso || !this.carga.frete;
-  }
 }

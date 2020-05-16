@@ -74,7 +74,7 @@
       },
       "caminhao": {
         "id": 1,
-        "placa": "JDN-5500",
+        "placa": "JDN5500",
         "motorista": {
           "nome": "Sandro",
           "habilitacao": "E",
@@ -90,8 +90,8 @@
       "origem": "Torres/RS",
       "destino": "Criciúma/SC",
       "descricao": "Cebola",
-      "peso": 33.5,
-      "frete": 11300,
+      "peso": 11,
+      "frete": 11211123.34123,
       "id": 1
     },
     {

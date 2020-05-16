@@ -8,29 +8,66 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Origem*:</ion-label>
-    <ion-input type="text" [(ngModel)]="carga.origem"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Destino*:</ion-label>
-    <ion-input type="text" [(ngModel)]="carga.destino"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Descrição*:</ion-label>
-    <ion-input type="text" [(ngModel)]="carga.descricao"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Peso*:</ion-label>
-    <ion-input type="number" [(ngModel)]="carga.peso"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Frete*:</ion-label>
-    <ion-input type="number" [(ngModel)]="carga.frete"></ion-input>
-  </ion-item>
-  <ion-fab vertical="bottom" horizontal="end" >
-    <ion-fab-button (click)="salvar()" [disabled]="isDisabled()">
-      <ion-icon name="checkmark-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <form #cargaForm="ngForm" novalidate>
+    <ion-item>
+      <ion-label position="floating">Origem*:</ion-label>
+      <ion-input #origem="ngModel" name="origem" type="text" [(ngModel)]="carga.origem" required></ion-input>
+      <ion-text color="danger" *ngIf="origem.invalid && (origem.dirty || origem.touched)">
+        <small>
+          <span *ngIf="origem.errors.required">
+            A origem da carga é obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Destino*:</ion-label>
+      <ion-input #destino="ngModel" name="destino" type="text" [(ngModel)]="carga.destino" required></ion-input>
+      <ion-text color="danger" *ngIf="destino.invalid && (destino.dirty || destino.touched)">
+        <small>
+          <span *ngIf="destino.errors.required">
+            O destino da carga é obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descrição*:</ion-label>
+      <ion-input #descricao="ngModel" name="descricao" type="text" [(ngModel)]="carga.descricao" required></ion-input>
+      <ion-text color="danger" *ngIf="descricao.invalid && (descricao.dirty || descricao.touched)">
+        <small>
+          <span *ngIf="descricao.errors.required">
+            A descrição da carga é obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Peso*:</ion-label>
+      <ion-input #peso="ngModel" name="peso" type="number" [(ngModel)]="carga.peso" required></ion-input>
+      <ion-text color="danger" *ngIf="peso.invalid && (peso.dirty || peso.touched)">
+        <small>
+          <span *ngIf="peso.errors.required">
+            O peso da carga é obrigatório
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor do Frete*:</ion-label>
+      <ion-input #frete="ngModel" name="frete" type="number" [(ngModel)]="carga.frete" required></ion-input>
+      <ion-text color="danger" *ngIf="frete.invalid && (frete.dirty || frete.touched)">
+        <small>
+          <span *ngIf="frete.errors.required">
+            O valor do frete é obrigatório
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="salvar()" [disabled]="cargaForm.invalid">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
 </ion-content>
