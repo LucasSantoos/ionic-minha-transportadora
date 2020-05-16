@@ -1,31 +1,36 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'caminhoes',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'caminhoes',
-    loadChildren: () => import('./caminhoes/caminhoes.module').then( m => m.CaminhoesPageModule)
+    loadChildren: () => import('./caminhoes/caminhoes.module').then( m => m.CaminhoesPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'motoristas',
-    loadChildren: () => import('./motoristas/motoristas.module').then( m => m.MotoristasPageModule)
+    loadChildren: () => import('./motoristas/motoristas.module').then( m => m.MotoristasPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'cargas',
-    loadChildren: () => import('./cargas/cargas.module').then( m => m.CargasPageModule)
+    loadChildren: () => import('./cargas/cargas.module').then( m => m.CargasPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'transporte',
-    loadChildren: () => import('./transporte/transporte.module').then( m => m.TransportePageModule)
+    loadChildren: () => import('./transporte/transporte.module').then( m => m.TransportePageModule),
+    canActivate: [AuthGuardService]
   }
 ];
 

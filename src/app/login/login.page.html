@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #loginForm="ngForm" (ngSubmit)="login()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Usuário</ion-label>
+      <ion-input #usuario="ngModel" name="username" type="text" [(ngModel)]="credentials.username" required autofocus>
+      </ion-input>
+      <ion-text color="danger" *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)">
+        <small>
+          <span *ngIf="usuario.errors.required">
+            O usuário é obrigatório
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input #senha="ngModel" name="password" type="password" [(ngModel)]="credentials.password" required>
+      </ion-input>
+      <ion-text color="danger" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+        <div class="ion-text-center">
+          <small>
+            <span *ngIf="senha.errors.required">A senha é obrigatória</span>
+          </small>
+        </div>
+      </ion-text>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block" [disabled]="loginForm.invalid">Entrar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
