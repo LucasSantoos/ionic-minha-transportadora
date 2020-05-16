@@ -30,7 +30,6 @@ export class CadastroPage implements OnInit {
     private cargaSercive : CargaService,
     private caminhaoSercive : CaminhaoService,
   ) { 
-    this.transporte = { status: ''};
     this.status = 
     [
       { id: 1, description:'Aguardando carregamento' },
@@ -38,6 +37,7 @@ export class CadastroPage implements OnInit {
       { id: 3, description:'Aguardando descarregamento' },
       { id: 4, description:'Concluído' }
     ];
+    this.transporte = { status: this.status[0]};
   }
     
   ngOnInit() {
