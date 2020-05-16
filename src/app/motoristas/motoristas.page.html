@@ -13,7 +13,7 @@
       <ion-label>
         <h3>Nome: <ion-text color="medium">{{item.nome}}</ion-text></h3>
         <h3>Habilitação: <ion-text color="medium">{{item.habilitacao}}</ion-text></h3>
-        <h3>Nascimento: <ion-text color="medium">{{item.dtNascimento | date:'dd/MM/yyyy'}}</ion-text></h3>
+        <h3>Data de Nascimento: <ion-text color="medium">{{item.dtNascimento | date:'dd/MM/yyyy'}}</ion-text></h3>
       </ion-label>
       <ion-icon color="dark" name="create" slot="end" [routerLink]="['/motoristas/cadastro', item.id]"></ion-icon>
       <ion-icon color="danger" name="trash" slot="end" (click)="confirmarExclusao(item)"></ion-icon>

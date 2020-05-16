@@ -8,21 +8,48 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Nome*:</ion-label>
-    <ion-input type="text" [(ngModel)]="motorista.nome"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Habilitação*:</ion-label>
-    <ion-input type="text" maxlength="2" [(ngModel)]="motorista.habilitacao"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Nascimento</ion-label>
-    <ion-datetime displayFormat="D MMMM YYYY" pickerFormat="D MMMM YYYY" [(ngModel)]="motorista.dtNascimento"></ion-datetime>
-  </ion-item>
-  <ion-fab vertical="bottom" horizontal="end" >
-    <ion-fab-button (click)="salvar()" [disabled]="!motorista.nome || !motorista.habilitacao">
-      <ion-icon name="checkmark-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <form #motoristaForm="ngForm" novalidate>
+    <ion-item>
+      <ion-label position="floating">Nome*:</ion-label>
+      <ion-input #nome="ngModel" type="text" [(ngModel)]="motorista.nome" name="nome" required></ion-input>
+      <ion-text color="danger" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+        <small>
+          <span *ngIf="nome.errors.required">
+            O nome é obrigatório
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Habilitação*:</ion-label>
+      <ion-select #habilitacao="ngModel" [(ngModel)]="motorista.habilitacao" name="habilitacao" required interface="popover">
+        <ion-select-option value="">Selecione uma categoria</ion-select-option>
+        <ion-select-option value="A">A</ion-select-option>
+        <ion-select-option value="B">B</ion-select-option>
+        <ion-select-option value="C">C</ion-select-option>
+        <ion-select-option value="D">D</ion-select-option>
+        <ion-select-option value="E">E</ion-select-option>
+        <ion-select-option value="AB">AB</ion-select-option>
+        <ion-select-option value="AC">AC</ion-select-option>
+        <ion-select-option value="AD">AD</ion-select-option>
+        <ion-select-option value="AE">AE</ion-select-option>
+      </ion-select>
+      <ion-text color="danger" *ngIf="habilitacao.invalid && (habilitacao.dirty || habilitacao.touched)">
+        <small>
+          <span *ngIf="habilitacao.errors.required">
+            A habilitação é obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Data de Nascimento</ion-label>
+      <ion-datetime #dtNascimento="ngModel" name="dtNascimento" displayFormat="D MMMM YYYY" pickerFormat="D MMMM YYYY" [(ngModel)]="motorista.dtNascimento"></ion-datetime>
+    </ion-item>
+    <ion-fab vertical="bottom" horizontal="end" >
+      <ion-fab-button (click)="salvar()" [disabled]="motoristaForm.invalid">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
 </ion-content>
