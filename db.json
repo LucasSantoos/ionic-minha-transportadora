@@ -102,5 +102,22 @@
       "frete": 21,
       "id": 2
     }
+  ],
+  "clientes": [
+    {
+      "razao": "Razão social",
+      "fantasia": "fantasia",
+      "cnpj": "333",
+      "endereco": "Rua. dl;sa dsad, 56",
+      "email": "asndasnd@asdas.com",
+      "contato": "3213213123",
+      "id": 1
+    },
+    {
+      "razao": "teste",
+      "cnpj": "11111111111111",
+      "email": "anderson@gmail.com",
+      "id": 2
+    }
   ]
 }

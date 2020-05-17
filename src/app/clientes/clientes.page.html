@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let item of clientes">
+      <ion-label>
+        <h3>Razão social: <ion-text color="medium">{{item.razao}}</ion-text></h3>
+        <h3>Nome fantasia: <ion-text color="medium">{{item.fantasia}}</ion-text></h3>
+        <h3>CNPJ: <ion-text color="medium">{{item.cnpj}}</ion-text></h3>
+        <h3>Endereço: <ion-text color="medium">{{item.endereco}}</ion-text></h3>
+        <h3>Email: <ion-text color="medium">{{item.email}}</ion-text></h3>
+        <h3>Contato: <ion-text color="medium">{{item.contato}}</ion-text></h3>
+      </ion-label>
+      <ion-icon color="dark" name="create" slot="end" [routerLink]="['/clientes/cadastro', item.id]"></ion-icon>
+      <ion-icon color="danger" name="trash" slot="end" (click)="confirmarExclusao(item)"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/clientes/cadastro']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

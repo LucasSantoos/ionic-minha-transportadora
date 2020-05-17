@@ -13,8 +13,6 @@ export class AuthService {
     password: "123"
   }
 
-  authenticated: boolean = false;
-
   constructor() { }
 
   login(obj: any): boolean {
@@ -23,7 +21,7 @@ export class AuthService {
         id: Math.random() * 23,
         nome: "Usuário teste"
       }
-      this.authenticated = true;
+      localStorage.setItem("authenticated", "true");
       return true;
     }
 
@@ -31,11 +29,15 @@ export class AuthService {
   }
 
   logout() {
-    this.authenticated = false;
+    localStorage.removeItem("authenticated");
   }
 
   isAuthenticated(): boolean {
-    return this.authenticated;
+    if (localStorage.getItem("authenticated")) {
+      return true;
+    }
+
+    return false;
   }
 
   getUser(): Usuario {

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Clientes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #clienteForm="ngForm" novalidate>
+    <ion-item>
+      <ion-label position="floating">Razão social*:</ion-label>
+      <ion-input #razao="ngModel" name="razao" type="text" [(ngModel)]="cliente.razao" required></ion-input>
+      <ion-text color="danger" *ngIf="razao.invalid && (razao.dirty || razao.touched)">
+        <small>
+          <span *ngIf="razao.errors.required">
+            A razão social é obrigatória
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome fantasia:</ion-label>
+      <ion-input #fantasia="ngModel" name="fantasia" type="text" [(ngModel)]="cliente.fantasia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">CNPJ*:</ion-label>
+      <ion-input #cnpj="ngModel" name="cnpj" type="text" [(ngModel)]="cliente.cnpj" required minlength="14" maxlength="14" pattern="[0-9]+"></ion-input>
+      <ion-text color="danger" *ngIf="cnpj.invalid && (cnpj.dirty || cnpj.touched)">
+        <small>
+          <span *ngIf="cnpj.errors.required">
+            O CNPJ obrigatório
+          </span>
+          <span *ngIf="cnpj.errors.minlength">
+            O CNPJ deve conter 14 dígitos
+          </span>
+          <span *ngIf="cnpj.errors.pattern">
+            O CNPJ deve conter apenas números
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Endereço:</ion-label>
+      <ion-input #endereco="ngModel" name="endereco" type="text" [(ngModel)]="cliente.endereco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email*:</ion-label>
+      <ion-input #email="ngModel" name="email" type="email" [(ngModel)]="cliente.email" required></ion-input>
+      <ion-text color="danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <small>
+          <span *ngIf="email.errors.required">
+            O email obrigatório
+          </span>
+        </small>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contato:</ion-label>
+      <ion-input #contato="ngModel" name="contato" type="text" [(ngModel)]="cliente.contato"></ion-input>
+    </ion-item>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="salvar()" [disabled]="clienteForm.invalid">
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

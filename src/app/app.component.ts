@@ -35,9 +35,9 @@ export class AppComponent implements OnInit {
       icon: 'bicycle'
     },
     {
-      title: 'Financeiro',
-      url: '/folder/financeiro',
-      icon: 'cash'
+      title: 'Clientes',
+      url: '/clientes',
+      icon: 'people'
     }
   ];
 
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private authService: AuthService,
     private router: Router,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
   ) {
     this.initializeApp();
   }
