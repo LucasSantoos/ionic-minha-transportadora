@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Carga } from '../model/Carga.interface';
+import { BASE_API } from './base-api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CargaService {
 
-  private URI = 'http://localhost:3000/cargas';
+  private URI = BASE_API + 'cargas';
 
   constructor(
     private httpClient:HttpClient

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Transporte } from '../model/Transporte.interface';
+import { BASE_API } from './base-api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TransporteService {
 
-  private URI = 'http://localhost:3000/transportes';
+  private URI = BASE_API + 'transportes';
 
   constructor(
     private httpClient:HttpClient

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Motorista } from '../model/Motorista.interface';
+import { BASE_API } from './base-api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MotoristaService {
 
-  private URI = 'http://localhost:3000/motoristas';
+  private URI = BASE_API + 'motoristas';
 
   constructor(
     private httpClient:HttpClient

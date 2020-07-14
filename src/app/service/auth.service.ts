@@ -9,8 +9,8 @@ export class AuthService {
   user: Usuario;
 
   fakeAuth: any = {
-    username: "demo",
-    password: "123"
+    username: "admin",
+    password: "admin"
   }
 
   constructor() { }

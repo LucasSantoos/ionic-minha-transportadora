@@ -40,7 +40,7 @@ export class CadastroPage implements OnInit {
   }
 
   async carregarCadastro() {
-    const id = parseInt(this.activatedRoute.snapshot.params['id']);       
+    const id = this.activatedRoute.snapshot.params['id'];       
     if(id) {
       const loading = await this.loadingController.create({message: 'Carregando'});
       loading.present();
@@ -61,6 +61,8 @@ export class CadastroPage implements OnInit {
       .subscribe(() => {
         loading.dismiss();
         this.navController.navigateForward(['/caminhoes']);
+      }, () => {
+        loading.dismiss()
       });
   }
 

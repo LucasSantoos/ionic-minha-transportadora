@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
     private alertCtrl: AlertController,
   ) {
     if (this.authService.isAuthenticated) {
-      this.router.navigate(["caminhoes"]);
+      this.router.navigate(["motoristas"]);
     }
   }
 
@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
 
   login() {
     if (this.authService.login(this.credentials)) {
-      this.router.navigate(["caminhoes"]);
+      this.router.navigate(["motoristas"]);
     } else {
       this.invalidCredentials();
     }

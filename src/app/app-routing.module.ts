@@ -13,13 +13,13 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'caminhoes',
-    loadChildren: () => import('./caminhoes/caminhoes.module').then( m => m.CaminhoesPageModule),
+    path: 'motoristas',
+    loadChildren: () => import('./motoristas/motoristas.module').then( m => m.MotoristasPageModule),
     canActivate: [AuthGuardService]
   },
   {
-    path: 'motoristas',
-    loadChildren: () => import('./motoristas/motoristas.module').then( m => m.MotoristasPageModule),
+    path: 'caminhoes',
+    loadChildren: () => import('./caminhoes/caminhoes.module').then( m => m.CaminhoesPageModule),
     canActivate: [AuthGuardService]
   },
   {
