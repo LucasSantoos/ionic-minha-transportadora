@@ -26,10 +26,11 @@
   </ion-item>
   <ion-item>
     <ion-label>Status:</ion-label>
-    <ion-select [(ngModel)]="transporte.status" placeholder="Selecione um status" [compareWith]="compareStatus">
-      <ion-select-option *ngFor="let item of status" [value]="item" >
-        {{item.description}}
-      </ion-select-option>
+    <ion-select #status="ngModel" placeholder="Selecione uma categoria" [(ngModel)]="transporte.status" name="status" required>
+      <ion-select-option value="0">Aguardando carregamento</ion-select-option>
+      <ion-select-option value="1">Em transporte</ion-select-option>
+      <ion-select-option value="2">Aguardando descarregamento</ion-select-option>
+      <ion-select-option value="3">Concluído</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-fab vertical="bottom" horizontal="end" >

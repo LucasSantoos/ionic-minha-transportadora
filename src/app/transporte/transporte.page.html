@@ -16,7 +16,11 @@
         <h3>Origem: <ion-text class="ion-text-wrap" color="medium">{{item.carga.origem}}</ion-text></h3>
         <h3>Destino: <ion-text class="ion-text-wrap" color="medium">{{item.carga.destino}}</ion-text></h3>
         <h3>Frete: <ion-text color="medium">{{item.carga.frete | currency:'BRL'}}</ion-text></h3>
-        <h3>Status: <ion-text color="medium">{{item.status.description || '---'}}</ion-text></h3>
+        <h3>Status: <ion-text color="medium">
+          {{item.status==0 ? 'Aguardando carregamento' : 
+            item.status==1 ? 'Em transporte' : 
+            item.status==2 ? 'Aguardando descarregamento' : 
+            item.status==3 ? 'Concluído' : '---'}}</ion-text></h3>
       </ion-label>
       <ion-icon color="dark" name="create" slot="end" [routerLink]="['/transporte/cadastro', item.id]"></ion-icon>
       <ion-icon color="danger" name="trash" slot="end" (click)="confirmarExclusao(item)"></ion-icon>
